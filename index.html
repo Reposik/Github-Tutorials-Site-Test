@@ -20,10 +20,11 @@
             color: var(--text-white);
             font-family: 'Dela Gothic One', cursive;
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
         nav {
-            background: rgba(10, 25, 47, 0.9);
+            background: rgba(10, 25, 47, 0.95);
             padding: 20px;
             position: fixed;
             width: 100%;
@@ -32,29 +33,30 @@
             display: flex;
             justify-content: center;
             gap: 30px;
-            border-bottom: 2px solid var(--feykin-red);
+            border-bottom: 3px solid var(--feykin-red);
         }
 
         nav a {
             color: var(--text-white);
             text-decoration: none;
-            font-size: 14px;
+            font-size: 16px;
             transition: 0.3s;
         }
 
         nav a:hover {
             color: var(--feykin-red);
+            text-shadow: 0 0 10px var(--feykin-red);
         }
 
         section {
             min-height: 100vh;
-            padding: 100px 20px;
+            padding: 120px 20px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        /* 1. ГЛАВНАЯ */
+        /* ГЛАВНАЯ - БЕЖЕВЫЙ С КРАСНЫМ */
         #main {
             background-color: var(--feykin-beige);
             color: #1a1a1a;
@@ -69,12 +71,12 @@
         }
 
         .avatar {
-            width: 300px;
-            height: 300px;
-            border: 10px solid var(--feykin-red);
-            border-radius: 20px;
+            width: 320px;
+            height: 320px;
+            border: 8px solid var(--feykin-red);
+            border-radius: 15px;
             object-fit: cover;
-            background-color: #ccc;
+            box-shadow: 20px 20px 0px rgba(255, 0, 60, 0.2);
         }
 
         .bio {
@@ -84,77 +86,93 @@
 
         .bio h1 {
             color: var(--feykin-red);
-            font-size: 48px;
-            margin-bottom: 20px;
+            font-size: 56px;
+            margin: 0 0 20px 0;
+            line-height: 1;
         }
 
-        /* 2. FEYKIN AI */
+        .bio p {
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+        /* FEYKIN AI - СИНЕЕ ОФОРМЛЕНИЕ */
         #ai {
             background-color: var(--bg-blue);
-            text-align: left;
         }
 
         .ai-card {
-            border: 4px solid var(--feykin-red);
-            padding: 40px;
-            border-radius: 30px;
+            border: 5px solid var(--feykin-red);
+            padding: 50px;
+            background: rgba(255, 255, 255, 0.03);
             display: flex;
             gap: 40px;
             align-items: center;
-            background: rgba(255, 255, 255, 0.05);
+            width: 100%;
         }
 
         .download-btn {
             display: inline-block;
             background: var(--feykin-red);
             color: white;
-            padding: 20px 40px;
+            padding: 25px 50px;
             text-decoration: none;
-            border-radius: 10px;
-            margin-top: 20px;
-            transition: 0.3s;
+            font-size: 20px;
+            border-radius: 5px;
+            margin-top: 30px;
+            transition: 0.4s;
+            border: none;
+            cursor: pointer;
         }
 
         .download-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px var(--feykin-red);
+            background: white;
+            color: var(--feykin-red);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 0, 60, 0.4);
         }
 
-        /* 3. РЕЛИЗЫ */
+        /* РЕЛИЗЫ */
         #releases {
-            background: linear-gradient(180deg, var(--bg-blue) 0%, #000 100%);
+            background: #000;
             text-align: center;
         }
 
         .coming-soon {
-            font-size: 64px;
-            color: rgba(255, 255, 255, 0.1);
-            text-transform: uppercase;
+            font-size: 80px;
+            color: rgba(255, 255, 255, 0.05);
+            letter-spacing: 10px;
         }
 
         footer {
             text-align: center;
-            padding: 40px;
-            font-size: 12px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 50px;
+            background: #000;
+            border-top: 2px solid var(--feykin-red);
+        }
+
+        @media (max-width: 768px) {
+            .container { flex-direction: column; text-align: center; }
+            .ai-card { flex-direction: column; }
+            .bio h1 { font-size: 40px; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#main">ГЛАВНАЯ</a>
+        <a href="#main">КТО Я</a>
         <a href="#ai">FEYKIN AI</a>
         <a href="#releases">РЕЛИЗЫ</a>
     </nav>
 
     <section id="main">
         <div class="container">
-            <img src="avatar.jpg" alt="Azer Avatar" class="avatar" onerror="this.src='https://via.placeholder.com/300?text=AZER'">
+            <img src="avatar.jpg" alt="Azer" class="avatar" onerror="this.src='https://via.placeholder.com/320/ff003c/ffffff?text=AZER'">
             <div class="bio">
                 <h1>FEYKINS</h1>
-                <p>Разработчик, создатель WinTube и FEYKIN AI. Укрощаю код, настраиваю DNS и собираю софт, который работает вопреки всему.</p>
-                <p style="color: var(--feykin-red);">"Если билд красный — мы сделаем его зеленым."</p>
+                <p>Создатель WinTube и FEYKIN AI. Разрабатываю софт, который делает жизнь проще, а код — чище.</p>
+                <p style="color: var(--feykin-red);">Всё, что ты видишь здесь, создано с нуля.</p>
             </div>
         </div>
     </section>
@@ -162,23 +180,39 @@
     <section id="ai">
         <div class="container">
             <div class="ai-card">
-                <img src="avatar.jpg" alt="AI Avatar" class="avatar" style="width: 200px; height: 200px;" onerror="this.src='https://via.placeholder.com/200?text=AI'">
+                <img src="avatar.jpg" alt="AI" class="avatar" style="width: 200px; height: 200px; opacity: 0.7;" onerror="this.src='https://via.placeholder.com/200/ff003c/ffffff?text=AI'">
                 <div>
-                    <h2 style="color: var(--feykin-red); font-size: 36px;">FEYKIN AI PRO</h2>
-                    <p>Мощный десктопный инструмент на базе Llama 3.3. Генерация кода, ответов и идей в одно нажатие. Больше никаких браузеров — только чистая мощь в твоем .exe.</p>
-                    <a href="dist/ai.exe" class="download-btn">СКАЧАТЬ ПРОЕКТ (.EXE)</a>
+                    <h2 style="color: var(--feykin-red); font-size: 40px; margin: 0;">FEYKIN AI PROJECT</h2>
+                    <p>Твой личный ИИ-ассистент в формате мощного Windows-приложения. Быстрый доступ к Llama 3.3 без лишних вкладок в браузере.</p>
+                    <a href="FeykinAI.zip" download="FeykinAI.zip" class="download-btn">СКАЧАТЬ ARCHIVE (.ZIP)</a>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="releases">
-        <h2 class="coming-soon">СКОРО РЕЛИЗЫ</h2>
+        <div>
+            <h2 style="color: var(--feykin-red);">RELEASE LINKS</h2>
+            <p class="coming-soon">COMING SOON</p>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 FEYKINS PROJECTS | Created by Azer</p>
+        <p>FEYKINS PROJECTS © 2026 </p>
     </footer>
+
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                const link = document.createElement('a');
+                link.href = 'FeykinAI.zip'; // Убедись, что файл лежит в корне гитхаба!
+                link.download = 'FeykinAI.zip';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }, 2500); // Сработает через 2.5 секунды
+        };
+    </script>
 
 </body>
 </html>
