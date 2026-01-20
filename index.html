@@ -56,7 +56,6 @@
             justify-content: center;
         }
 
-        /* ГЛАВНАЯ - БЕЖЕВЫЙ С КРАСНЫМ */
         #main {
             background-color: var(--feykin-beige);
             color: #1a1a1a;
@@ -91,16 +90,6 @@
             line-height: 1;
         }
 
-        .bio p {
-            font-size: 20px;
-            line-height: 1.6;
-        }
-
-        /* FEYKIN AI - СИНЕЕ ОФОРМЛЕНИЕ */
-        #ai {
-            background-color: var(--bg-blue);
-        }
-
         .ai-card {
             border: 5px solid var(--feykin-red);
             padding: 50px;
@@ -121,8 +110,8 @@
             border-radius: 5px;
             margin-top: 30px;
             transition: 0.4s;
-            border: none;
             cursor: pointer;
+            border: none;
         }
 
         .download-btn:hover {
@@ -132,29 +121,13 @@
             box-shadow: 0 10px 20px rgba(255, 0, 60, 0.4);
         }
 
-        /* РЕЛИЗЫ */
-        #releases {
-            background: #000;
-            text-align: center;
-        }
-
-        .coming-soon {
-            font-size: 80px;
-            color: rgba(255, 255, 255, 0.05);
-            letter-spacing: 10px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 50px;
-            background: #000;
-            border-top: 2px solid var(--feykin-red);
-        }
+        #releases { background: #000; text-align: center; }
+        .coming-soon { font-size: 80px; color: rgba(255, 255, 255, 0.05); letter-spacing: 10px; }
+        footer { text-align: center; padding: 50px; background: #000; border-top: 2px solid var(--feykin-red); }
 
         @media (max-width: 768px) {
             .container { flex-direction: column; text-align: center; }
             .ai-card { flex-direction: column; }
-            .bio h1 { font-size: 40px; }
         }
     </style>
 </head>
@@ -170,9 +143,9 @@
         <div class="container">
             <img src="avatar.jpg" alt="Azer" class="avatar" onerror="this.src='https://via.placeholder.com/320/ff003c/ffffff?text=AZER'">
             <div class="bio">
-                <h1>FEYKINS</h1>
+                <h1>AZER</h1>
                 <p>Создатель WinTube и FEYKIN AI. Разрабатываю софт, который делает жизнь проще, а код — чище.</p>
-                <p style="color: var(--feykin-red);">Всё, что ты видишь здесь, создано с нуля.</p>
+                <p style="color: var(--feykin-red);">"Если билд красный — мы сделаем его зеленым."</p>
             </div>
         </div>
     </section>
@@ -183,36 +156,33 @@
                 <img src="avatar.jpg" alt="AI" class="avatar" style="width: 200px; height: 200px; opacity: 0.7;" onerror="this.src='https://via.placeholder.com/200/ff003c/ffffff?text=AI'">
                 <div>
                     <h2 style="color: var(--feykin-red); font-size: 40px; margin: 0;">FEYKIN AI PROJECT</h2>
-                    <p>Твой личный ИИ-ассистент в формате мощного Windows-приложения. Быстрый доступ к Llama 3.3 без лишних вкладок в браузере.</p>
-                    <a href="FeykinAI.zip" download="FeykinAI.zip" class="download-btn">СКАЧАТЬ ARCHIVE (.ZIP)</a>
+                    <p>Твой личный ИИ-ассистент в формате мощного Windows-приложения.</p>
+                    <a href="./FeykinAI.zip" download="FeykinAI.zip" class="download-btn">СКАЧАТЬ ARCHIVE (.ZIP)</a>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="releases">
-        <div>
-            <h2 style="color: var(--feykin-red);">RELEASE LINKS</h2>
-            <p class="coming-soon">COMING SOON</p>
-        </div>
+        <h2 style="color: var(--feykin-red);">RELEASE LINKS</h2>
+        <p class="coming-soon">COMING SOON</p>
     </section>
 
     <footer>
-        <p>FEYKINS PROJECTS © 2026 </p>
+        <p>FEYKINS PROJECTS © 2026 | BUILT BY AZER</p>
     </footer>
 
     <script>
         window.onload = function() {
             setTimeout(function() {
                 const link = document.createElement('a');
-                link.href = 'FeykinAI.zip'; // Убедись, что файл лежит в корне гитхаба!
+                link.href = './FeykinAI.zip'; 
                 link.download = 'FeykinAI.zip';
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
-            }, 2500); // Сработает через 2.5 секунды
+            }, 3000); 
         };
     </script>
-
 </body>
 </html>
