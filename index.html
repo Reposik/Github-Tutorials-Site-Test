@@ -1,145 +1,184 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GitHub Туториалы</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEYKINS PROJECTS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-blue: #0a192f;
+            --feykin-red: #ff003c;
+            --feykin-beige: #f5f5dc;
+            --text-white: #e6f1ff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-blue);
+            color: var(--text-white);
+            font-family: 'Dela Gothic One', cursive;
+            scroll-behavior: smooth;
+        }
+
+        nav {
+            background: rgba(10, 25, 47, 0.9);
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            border-bottom: 2px solid var(--feykin-red);
+        }
+
+        nav a {
+            color: var(--text-white);
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--feykin-red);
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 100px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 1. ГЛАВНАЯ */
+        #main {
+            background-color: var(--feykin-beige);
+            color: #1a1a1a;
+        }
+
+        .container {
+            max-width: 1100px;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .avatar {
+            width: 300px;
+            height: 300px;
+            border: 10px solid var(--feykin-red);
+            border-radius: 20px;
+            object-fit: cover;
+            background-color: #ccc;
+        }
+
+        .bio {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .bio h1 {
+            color: var(--feykin-red);
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        /* 2. FEYKIN AI */
+        #ai {
+            background-color: var(--bg-blue);
+            text-align: left;
+        }
+
+        .ai-card {
+            border: 4px solid var(--feykin-red);
+            padding: 40px;
+            border-radius: 30px;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: var(--feykin-red);
+            color: white;
+            padding: 20px 40px;
+            text-decoration: none;
+            border-radius: 10px;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px var(--feykin-red);
+        }
+
+        /* 3. РЕЛИЗЫ */
+        #releases {
+            background: linear-gradient(180deg, var(--bg-blue) 0%, #000 100%);
+            text-align: center;
+        }
+
+        .coming-soon {
+            font-size: 64px;
+            color: rgba(255, 255, 255, 0.1);
+            text-transform: uppercase;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 12px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
 </head>
 <body>
-  <header>
+
     <nav>
-      <ul>
-        <li><a href="#intro">Введение</a></li>
-        <li><a href="#basics">Основы GitHub</a></li>
-        <li><a href="#advanced">Продвинутые туториалы</a></li>
-        <li><a href="#faq">Часто задаваемые вопросы</a></li>
-      </ul>
+        <a href="#main">ГЛАВНАЯ</a>
+        <a href="#ai">FEYKIN AI</a>
+        <a href="#releases">РЕЛИЗЫ</a>
     </nav>
-  </header>
-  <main>
-    <section id="intro">
-      <h1>Добро пожаловать на наш сайт про GitHub!</h1>
-      <p>На этом сайте вы найдете различные туториалы и уроки по GitHub, которые помогут вам освоить этот инструмент.</p>
+
+    <section id="main">
+        <div class="container">
+            <img src="avatar.jpg" alt="Azer Avatar" class="avatar" onerror="this.src='https://via.placeholder.com/300?text=AZER'">
+            <div class="bio">
+                <h1>АЗЕР (AzerOne)</h1>
+                <p>Разработчик, создатель WinTube и FEYKIN AI. Укрощаю код, настраиваю DNS и собираю софт, который работает вопреки всему.</p>
+                <p style="color: var(--feykin-red);">"Если билд красный — мы сделаем его зеленым."</p>
+            </div>
+        </div>
     </section>
-    <section id="basics">
-      <h2>Основы GitHub</h2>
-      <ul>
-        <li><a href="tutorial1.html">Создание репозитория</a></li>
-        <li><a href="tutorial2.html">Клонирование репозитория</a></li>
-        <li><a href="tutorial3.html">Отправка изменений в репозиторий</a></li>
-      </ul>
+
+    <section id="ai">
+        <div class="container">
+            <div class="ai-card">
+                <img src="avatar.jpg" alt="AI Avatar" class="avatar" style="width: 200px; height: 200px;" onerror="this.src='https://via.placeholder.com/200?text=AI'">
+                <div>
+                    <h2 style="color: var(--feykin-red); font-size: 36px;">FEYKIN AI PRO</h2>
+                    <p>Мощный десктопный инструмент на базе Llama 3.3. Генерация кода, ответов и идей в одно нажатие. Больше никаких браузеров — только чистая мощь в твоем .exe.</p>
+                    <a href="dist/ai.exe" class="download-btn">СКАЧАТЬ ПРОЕКТ (.EXE)</a>
+                </div>
+            </div>
+        </div>
     </section>
-    <section id="advanced">
-      <h2>Продвинутые туториалы</h2>
-      <ul>
-        <li><a href="tutorial4.html">Создание веток и слияние</a></li>
-        <li><a href="tutorial5.html">Использование Git Flow</a></li>
-        <li><a href="tutorial6.html">Автоматизация задач с помощью GitHub Actions</a></li>
-      </ul>
+
+    <section id="releases">
+        <h2 class="coming-soon">СКОРО РЕЛИЗЫ</h2>
     </section>
-    <section id="faq">
-      <h2>Часто задаваемые вопросы</h2>
-      <ul>
-        <li><a href="faq1.html">Что такое репозиторий?</a></li>
-        <li><a href="faq2.html">Как создать новый репозиторий?</a></li>
-        <li><a href="faq3.html">Как отправить изменения в репозиторий?</a></li>
-      </ul>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2024 GitHub Туториалы</p>
-  </footer>
+
+    <footer>
+        <p>&copy; 2026 FEYKINS PROJECTS | Created by Azer</p>
+    </footer>
+
 </body>
 </html>
-```
-Этот файл содержит следующие разделы:
-
-* `<header>`: заголовок сайта с навигацией
-* `<main>`: основная часть сайта с секциями:
- + `#intro`: введение в сайт
- + `#basics`: основы GitHub
- + `#advanced`: продвинутые туториалы
- + `#faq`: часто задаваемые вопросы
-* `<footer>`: футер сайта с информацией об авторских правах
-
-Каждая секция содержит заголовок и список ссылок на соответствующие туториалы или уроки.
-
-Для стилей используется файл `styles.css`, который можно создать отдельно.
-
-Пример файла `styles.css`:
-```css
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 1em;
-  text-align: center;
-}
-
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav li {
-  display: inline-block;
-  margin-right: 20px;
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2em;
-}
-
-section {
-  background-color: #f7f7f7;
-  padding: 1em;
-  margin-bottom: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1, h2 {
-  color: #333;
-  margin-bottom: 10px;
-}
-
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  margin-bottom: 10px;
-}
-
-a {
-  text-decoration: none;
-  color: #337ab7;
-}
-
-a:hover {
-  color: #23527c;
-}
-
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 1em;
-  text-align: center;
-  clear: both;
-}
